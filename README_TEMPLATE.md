@@ -13,9 +13,9 @@
 | Name | GitHub | Role | Leader |
 |---|---|---|---|
 | 〈Kwatcher, Max〉 | @〈M-kwatcher〉 | 〈docs lead, project coordinator〉 | ✅ |
-| 〈Tran, Aylani〉 | @〈…〉 | 〈…〉 | |
-| 〈Brambila, Matthew〉 | @〈…〉 | 〈…〉 | |
-| 〈Gargallo, Isabel〉 | @〈…〉 | 〈…〉 | |
+| 〈Tran, Aylani〉 | @〈a-t-tran〉 | 〈…〉 | |
+| 〈Brambila, Matthew〉 | @〈matt-bram〉 | 〈…〉 | |
+| 〈Gargallo, Isabel〉 | @〈Isabel285〉 | 〈…〉 | |
 | 〈Sainz, Michael〉 | @〈…〉 | 〈…〉 | |
 
 **Contact person:** 〈Max Kwatcher〉 — 〈mkwatcher@csu.fullerton.edu〉
