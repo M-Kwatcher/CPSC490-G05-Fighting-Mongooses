@@ -16,14 +16,14 @@
 | 〈Tran, Aylani〉 | @〈a-t-tran〉 | 〈…〉 | |
 | 〈Brambila, Matthew〉 | @〈matt-bram〉 | 〈…〉 | |
 | 〈Gargallo, Isabel〉 | @〈Isabel285〉 | 〈…〉 | |
-| 〈Sainz, Michael〉 | @〈…〉 | 〈…〉 | |
+| 〈Sainz, Michael〉 | @〈michaelsainzz〉 | 〈…〉 | |
 
 **Contact person:** 〈Max Kwatcher〉 — 〈mkwatcher@csu.fullerton.edu〉
 
 ## Links
 
 - **Proposal:** [`proposal/proposal.md`](proposal/proposal.md)
-- **Project board:** 〈paste your Projects board URL〉
+- **Project board:** 〈https://github.com/users/M-Kwatcher/projects/2/views/1〉
 - **Specifications:** [`docs/specs/`](docs/specs/) · **Designs:** [`docs/design/`](docs/design/)
 - **Prototype:** [`prototype/`](prototype/) — run instructions in its README
 - **Sprint reviews:** [`docs/sprint-reviews/`](docs/sprint-reviews/)
