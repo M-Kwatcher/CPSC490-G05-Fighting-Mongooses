@@ -1,10 +1,10 @@
-# Project Proposal — 〈Project Title〉
+# Project Proposal — WILS: Whale Identification/Location System
 
 **Department of Computer Science**
 **CPSC 490 Undergraduate Seminar in Computer Science — Proposal for Capstone Project**
 
-**Group 〈N〉 — 〈Group Name〉** · Sponsor: 〈RTX-3 / EL-1 / SNX-n / independent〉
-Authors: 〈Last, First (GitHub username)〉, 〈…〉
+**Group 5 — Fighting Mongooses** · Sponsor: 〈RTX-3 / EL-1 / SNX-n / independent〉
+Authors: Kwatcher, Max; Brambila, Matthew; Sainz, Michael; Tran, Aylani; Gargallo, Isabel
 Date: 〈YYYY-MM-DD〉
 
 > **This file is the proposal document, not a README.** Its section numbers,
@@ -88,100 +88,35 @@ Date: 〈YYYY-MM-DD〉
 
 ## 1. Introduction
 
-> Describe the necessary background on the project field to help the reader
-> understand the field. Assume the reader has B.S. degree in computer science
-> but not necessary knowledgeable in the selected area. You may also briefly
-> describe motivation of the project if any.
->
-> Specify the problem identified and to be solved in this project, the
-> importance or usefulness of the problem solving or project. Further
-> describes what makes your proposal different from existing ones.
+Sound travels at a constant speed, which is useful for triangulation since you can measure the difference between one observation and another to begin calculating the origin's location. This is especially beneficial to our system, as sound travels further in water due to the relative density of water compared against air. Sound travels by vibrating the molecules of the medium in which it travels. This means that for sound in water, it travels further than it would in air because the water molecules are more densely packed allowing the energy to propagate further before dissipating. This enables our system to track one or more whales over a considerable distance which would also reduce the total number of microphones needed over an area in order to track the whales. Identifying the whales poses a unique problem. We are hopeful that a properly trained deep learning model will be able to find patterns that the human mind cannot and therefore be able to differentiate one whale from another.
 
-〈Your introduction.〉
+For our project, we seek to create a system that can passively track the location of whales as they transit the oceans of the world and potentially be able to identify specific whales or groups of whales as they are tracked.
+
+Knowing where whales are and which species are present matters for protecting endangered populations, reducing collisions between whales and ships, and supporting responsible whale watching. A passive acoustic system can listen around the clock, in any weather, without disturbing the animals, and at a lower cost than aerial or boat surveys. Automating the detection and location of whale calls would let researchers make use of large amounts of underwater audio that are currently too time-consuming to review by hand.
 
 ### 1.1 Related Work
 
-> Describe the related or existing work in detail. This section is like a
-> survey on the selected problem or topic.
-
-〈Your survey. Cite with bracketed numbers matching §8 — every reference must
-be a source your team has actually read.〉
-
-**Do a comparative analysis, not a list of summaries.** Find the existing
-ideas, products, papers, or tools that attack the same problem and compare
-them against each other on the dimensions that matter for your project, with
-honest pros and cons. Then say plainly what your project does differently and
-why that difference is worth the effort.
-
-| Existing approach | What it does | Pros | Cons | Why ours differs |
-|---|---|---|---|---|
-| 〈product / paper [1]〉 | 〈…〉 | 〈…〉 | 〈…〉 | 〈…〉 |
-| 〈product / paper [2]〉 | 〈…〉 | 〈…〉 | 〈…〉 | 〈…〉 |
-| 〈product / paper [3]〉 | 〈…〉 | 〈…〉 | 〈…〉 | 〈…〉 |
-
-〈Discuss the table in prose — the table is evidence, the paragraph is the
-argument. "Nothing like this exists" is almost never true and reads as a
-missing survey; if a close competitor exists, say so and explain why you are
-still building this.〉
+There is a similar project to ours that was done in 2025 by researchers from Cornell [1]. Their goal was to passively and accurately count the right whale population as they fed in a common feeding ground off of Cape Cod. They specifically were interested in tracking right whales as they are an endangered species of whale. Their goal was to augment existing methods for tracking and tallying the right whale population by using a cheaper method than the traditional options which include an aerial survey. Using a deep learning model, the researchers were able to detect right whale sounds with a precision of 86%. Beyond Cape Cod, the researchers hope that their passive system will allow for an expanded range in which scientists can catalog and monitor right whale activity.
 
 ### 1.2 Problem Statements
 
-> Briefly state the problem to solve in this project.
+Tracking whales today relies largely on visual methods such as aerial surveys, which are expensive and only work in daylight and good weather. Getting close to whales is also restricted: the Marine Mammal Protection Act makes it illegal to harass marine mammals, and federal guidelines limit how closely people, vessels, and aircraft, including drones, can approach them [2]. Underwater recordings avoid these limits, but they are hard to use on their own, because listening through hours of audio by hand is slow and a recording alone does not show where a whale is.
 
-〈Your problem statement(s), **concise** — a few sentences each, no
-background (that was §1) and no solution (that is §3). Number them P1, P2, …
-so later sections can refer back.〉
-
-**Every problem here must connect to the goals and objectives in §2, and
-every goal in §2 must trace back to a problem here.** A goal with no problem
-behind it is scope you invented; a problem with no goal is a problem you are
-not actually solving. Check both directions before you submit — this mapping
-is what the final project report is graded against.
-
-| Problem | Addressed by |
-|---|---|
-| P1 〈one line〉 | 〈Goal 1 (#n)〉 |
-| P2 〈one line〉 | 〈Goal 2 (#n)〉 |
+Solving this is non-trivial. Ocean recordings are full of noise from ships, waves, and other animals, whale calls vary between species and individuals, and estimating a call's location requires precise timing across multiple hydrophones and accounting for how sound travels in water. This project will let us demonstrate skills from across our degree, including machine learning, signal processing, algorithm design, and software engineering, while building a tool that could benefit researchers and conservation efforts.
 
 ## 2. Goals and Objectives
 
-> Describe goals and objectives. Goals are general statements of what you are
-> trying to accomplish with the project or problems to solve. Objectives are
-> specific, measurable statements of what you want to complete to reach the
-> project goals. Most projects have 2-3 goals.
->
-> List the objectives for each goal. To write objectives, look at the goal
-> statement and list what you need to complete using action words like use
-> case names in order to meet the goal.
->
-> Note that the goals and objectives in a proposal will be an important
-> metric to evaluate whether or not you successfully finished your project
-> when you turn in your final project report.
-
-Each **goal** is tracked as an **Epic** issue and each **objective** as a
-**User Story** issue in the team repository (see the setup guide's *Epics and user stories* section).
-**Every epic and user story in the repository is linked from this section** —
-CI gate G8 fails if one exists that this section does not link. That is what
-keeps the goals in this document and the work on the board from drifting
-apart.
-
-Write each objective the way the guidance above asks — **an action word plus
-the measure that says it is done**, not a role-play sentence:
-
-- **Goal 1: 〈e.g. Secure account management〉** (Epic #〈n〉)
-  - Objective 1.1: 〈Implement member registration and login with hashed
-    credentials, session expiry, and rejection of malformed input.〉 (#〈n〉)
-  - Objective 1.2: 〈Demonstrate the login round-trip in a runnable prototype
-    at the Week-8 in-class check.〉 (#〈n〉)
-- **Goal 2: 〈your second goal〉** (Epic #〈n〉)
-  - Objective 2.1: 〈Action word + what you will complete + how it will be
-    measured〉 (#〈n〉)
-
-〈Replace the brackets with your own 2–3 goals and their objectives, and put
-the **real issue numbers** in as you file them — gate G8 checks that every
-epic and story in your repository is linked from this section. A fully worked
-version of this, with live issues and a populated board, is in the course
-example repository.〉
+- **Goal 1: Build an AI capable of recognizing whale calls** (Epic #8)
+  - Objective 1.1: Put together a database of different whale calls to be used in training an AI, with at least 200 labeled clips for each of at least three whale species (including humpback) and a noise class that includes boat noise. (#9)
+  - Objective 1.2: Build an AI that is capable of recognizing specific noises, detecting whether a clip contains a whale call or only background noise with at least 80% accuracy on a held-out test set. (#10)
+  - Objective 1.3: Teach the AI to recognize different whale calls using the database, identifying the correct species with at least 75% accuracy on a held-out test set. (#11)
+  - Objective 1.4: Demonstrate that the AI is able to differentiate between whale calls and some other noises that could be somewhat similar, classifying humpback calls against boat noise with at least 85% accuracy on a held-out test set. (#12)
+  - Objective 1.5: Save a clip of the whale call to calculate the distance away it was created (possibly save to hard drive so researchers can keep it for alternate purposes), with every detected call saved along with its timestamp and hydrophone ID. (#13)
+- **Goal 2: Create a locator capable of detecting how far away a sound was created** (Epic #14)
+  - Objective 2.1: "Listen" to the sound clip provided by the AI and build the locator to first recognize which direction a sound is coming from, estimating the direction within 15 degrees in a simulated two-hydrophone setup. (#15)
+  - Objective 2.2: Add the capability to measure the distance from which the sound was created to the locator, estimating the distance within 10% of the true distance in a simulated setup. (#16)
+  - Objective 2.3: Demonstrate that the locator is able to determine the direction and distance that a sound was created from, meeting the targets of Objectives 2.1 and 2.2 in at least 80% of 20 simulated test scenarios. (#17)
+  - Objective 2.4: Reconfigure the calculations from Objective 2.2 to adjust how sound travels through the water (if first created around how sound travels in air), using the speed of sound in seawater (about 1,500 m/s) while still meeting the 2.1 and 2.2 targets. (#18)
 
 ## 3. Proposed Approaches
 
@@ -317,14 +252,6 @@ what fraction of each artifact was AI-assisted, and how you verified it.〉
 
 ## 8. References
 
-> [1] Burges, C. J. C. Tutorial on Support Vector Machines for Pattern
-> Recognition. Kluwer Academic Publishers, 1998.
-> [2] Chen, P., Fan, R., and Lin, C. A study on SMO-type decomposition
-> methods for support vector machines. IEEE Transactions on Neural Networks,
-> 2006.
-> [3] For Wikipedia, specify the URL here
-> [4] For a web source, specify the URL here plus date accessed
+[1] M. L. Garcia, I. Tolkova, S. Madhusudhana, A. Rahaman, C. S. Baker, C. A. Mayo, C. A. Hudak, and H. Klinck, "Acoustic abundance estimation for critically endangered North Atlantic right whales in Cape Cod Bay, Massachusetts, USA," *Endangered Species Research*, vol. 56, pp. 101–115, 2025, doi: 10.3354/esr01384.
 
-〈Number references in the order first cited and cite them in the text as
-[1], [2]. Every entry must be a source a team member has actually read and
-can produce on request.〉
+[2] Marine Mammal Protection Act of 1972, 16 U.S.C. § 1361 et seq.
