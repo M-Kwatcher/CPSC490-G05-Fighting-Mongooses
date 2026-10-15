@@ -104,7 +104,9 @@ An additional project seeking to protect whales is WhaleMap [[3](https://whalema
 
 | Project | Pros | Cons | How Ours Differs |
 |---------|------|------|------------------|
-| data | data | data | data |
+| 2025 Cornell Project | Able to detect the correct whales with 86% accuracy. Cheaper than traditional options. | Currently limited range. | Look out for more whale species. Alerts where to avoid whales. |
+| Whale Locator | Marks locations of whales and vessels. Can give live notifications if you're nearing a whale. | Is reliant on the reports provided to it. | Use acoustics to locate whales. |
+| WhaleMap | Uses autonomous gliders to acoustically locate whales. Marks locations of whales. | Limited range. Expensive. | Cheaper. Easier to scale. |
 
 ### 1.2 Problem Statements
 
