@@ -106,12 +106,12 @@ Solving this is non-trivial. Ocean recordings are full of noise from ships, wave
 
 ## 2. Goals and Objectives
 
-- **Goal 1: Build an AI capable of recognizing whale calls** (Epic #8)
-  - Objective 1.1: Put together a database of different whale calls to be used in training an AI, with at least 200 labeled clips for each of at least three whale species (including humpback) and a noise class that includes boat noise. (#9)
-  - Objective 1.2: Build an AI that is capable of recognizing specific noises, detecting whether a clip contains a whale call or only background noise with at least 80% accuracy on a held-out test set. (#10)
-  - Objective 1.3: Teach the AI to recognize different whale calls using the database, identifying the correct species with at least 75% accuracy on a held-out test set. (#11)
-  - Objective 1.4: Demonstrate that the AI is able to differentiate between whale calls and some other noises that could be somewhat similar, classifying humpback calls against boat noise with at least 85% accuracy on a held-out test set. (#12)
-  - Objective 1.5: Save a clip of the whale call to calculate the distance away it was created (possibly save to hard drive so researchers can keep it for alternate purposes), with every detected call saved along with its timestamp and hydrophone ID. (#13)
+- **Goal 1: Build an AI capable of recognizing whale calls** ([Epic #8](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/8))
+  - Objective 1.1: Put together a database of different whale calls to be used in training an AI, with at least 200 labeled clips for each of at least three whale species (including humpback) and a noise class that includes boat noise. ([story #9](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/9))
+  - Objective 1.2: Build an AI that is capable of recognizing specific noises, detecting whether a clip contains a whale call or only background noise with at least 80% accuracy on a held-out test set. ([story #10](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/10))
+  - Objective 1.3: Teach the AI to recognize different whale calls using the database, identifying the correct species with at least 75% accuracy on a held-out test set. ([story #11](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/11))
+  - Objective 1.4: Demonstrate that the AI is able to differentiate between whale calls and some other noises that could be somewhat similar, classifying humpback calls against boat noise with at least 85% accuracy on a held-out test set. ([story #12](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/12))
+  - Objective 1.5: Save a clip of the whale call to calculate the distance away it was created (possibly save to hard drive so researchers can keep it for alternate purposes), with every detected call saved along with its timestamp and hydrophone ID. ([story #13](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/13))
 - **Goal 2: Create a locator capable of detecting how far away a sound was created** (Epic #14)
   - Objective 2.1: "Listen" to the sound clip provided by the AI and build the locator to first recognize which direction a sound is coming from, estimating the direction within 15 degrees in a simulated two-hydrophone setup. (#15)
   - Objective 2.2: Add the capability to measure the distance from which the sound was created to the locator, estimating the distance within 10% of the true distance in a simulated setup. (#16)
