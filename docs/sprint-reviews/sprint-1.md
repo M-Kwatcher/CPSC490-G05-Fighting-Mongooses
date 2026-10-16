@@ -99,15 +99,15 @@ row. "We were told and did nothing" is a legitimate row — with a reason.
 Three metrics the team chose, per member. Not a grade — a conversation
 starter, and an early warning the team can act on itself.
 
-Counts as of Oct 14, from GitHub.
+Counts as of Oct 14, from GitHub. Sprint 1 had two team meetings: the Sprint 1 meeting (Sep 29) and a Discord call (Oct 6).
 
 | Member | Meetings attended | Merged PRs | Issues closed | Reviews given |
 |---|---|---|---|---|
-| Max Kwatcher (@M-Kwatcher) | 〈n〉 | 1 | 1 | 2 |
-| Matthew Brambila (@matt-bram) | 〈n〉 | 0 | 0 | 0 |
-| Michael Sainz (@michaelsainzz) | 〈n〉 | 0 | 0 | 1 |
-| Aylani Tran (@a-t-tran) | 〈n〉 | 2 | 3 | 3 |
-| Isabel Gargallo (@Isabel285) | 〈n〉 | 0 | 0 | 0 |
+| Max Kwatcher (@M-Kwatcher) | 2/2 | 1 | 1 | 2 |
+| Matthew Brambila (@matt-bram) | 2/2 | 0 | 0 | 0 |
+| Michael Sainz (@michaelsainzz) | 1/2 | 0 | 0 | 1 |
+| Aylani Tran (@a-t-tran) | 2/2 | 2 | 3 | 3 |
+| Isabel Gargallo (@Isabel285) | 2/2 | 0 | 0 | 0 |
 
 Two members had no work in the repository during Sprint 1 and one had only a
 review. For Sprint 2, every member owns at least one story and lands work
