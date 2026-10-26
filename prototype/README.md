@@ -5,6 +5,8 @@ sprint; the in-class checks demo from this folder.
 
 Right now it holds:
 
+- **`ai-detector/`** - Goal 1: being able to distinguish a whale call from
+  ambient noise (#10) and boat noises (#12).
 - **`locator/`** — Goal 2: where a whale call came from. Direction (#15) and
   distance (#16) from hydrophone recordings.
 - **`login.py`** — the course's example slice (story #3, task #5), kept as a
