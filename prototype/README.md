@@ -25,8 +25,13 @@ pip install -r prototype/requirements.txt pytest
 
 ```bash
 cd prototype
-python -m locator.demo_delay      # plots a test sound and a copy 160 samples later
-python login.py                   # course example: prints a truncated session token
+python -m locator.demo_delay         # plots a test sound and a copy 160 samples later
+python login.py                      # course example: prints a truncated session token
+python ai-detector.whale_converter ./whale_noises      # takes in audio files (wav, flac, mp3, or ogg) from a given folder (in this case named whale_noises), and adds the data into a folder ./data/whale_windows
+python ai-detector.boat_converter ./boat_noises        # same as whale converter, but for boat noises (./data/boat_windows)
+python ai-detector.ambient_converter ./ambient_noises  # same as whale converter, but for ambient/empty ocean noises (./data/ambient_windows)
+python ai-detector.whale_detector train                # takes data from ./data to train the model, and saves it to model.pt
+python ai-detector.whale_detector detect noise.wav     # uses the trained model to detect if there's a whale noise in the provided audio file
 ```
 
 ## How to test
