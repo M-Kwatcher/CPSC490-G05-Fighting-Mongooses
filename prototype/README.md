@@ -148,7 +148,11 @@ These noises are also shorter in duration like the humpback whale, so it has a
 ## References (format correctly later)
 
 [1] https://pubs.aip.org/asa/jasa/article/151/4/2558/2838297/Acoustic-detection-range-of-right-whale-upcalls
+
 [2] http://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/north-atlantic-right-whale/
+
 [3] https://dosits.org/galleries/audio-gallery/marine-mammals/baleen-whales/blue-whale/
+
 [4] https://www.whoi.edu/oceanus/feature/frequency-ranges-of-marine-animal-sounds/
+
 [5] https://www.bodyglovehawaii.com/blog/all-about-whale-song/
