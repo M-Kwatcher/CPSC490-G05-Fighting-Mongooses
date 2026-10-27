@@ -3,3 +3,6 @@
 numpy==2.5.4
 scipy==1.18.1
 matplotlib==3.11.2
+torch==2.14.1
+librosa==0.11.0
+soundfile==0.14.0
