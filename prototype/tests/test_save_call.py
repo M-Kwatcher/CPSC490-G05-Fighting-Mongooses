@@ -1,8 +1,13 @@
 import os
 import numpy as np
-from prototype.locator.save_call import save_call
-from prototype.locator.simulate import detect_and_save_calls, SAMPLE_RATE
+import sys 
+from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from locator.save_call import save_call 
+from locator.simulate import detect_and_save_calls, SAMPLE_RATE
+        
 def test_save_call_creates_file(tmp_path):
     audio_bytes = b"\x00\x01\x02\x03" * 100
     hydrophone_id = 3
@@ -26,6 +31,7 @@ def test_detect_and_save_calls(tmp_path):
         recordings=[loud, quiet],
         hydrophone_ids=[0, 1],
         threshold=0.3,
+        output_dir=str(tmp_path),
     )
 
     assert len(saved) == 1

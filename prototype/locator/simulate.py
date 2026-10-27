@@ -4,7 +4,7 @@ import numpy as np
 from scipy.signal import chirp
 
 from locator.config import HYDROPHONES, SAMPLE_RATE, SPEED_OF_SOUND
-from prototype.locator.save_call import save_call
+from locator.save_call import save_call
 
 
 def makeSound(durationS):
@@ -55,7 +55,12 @@ def recordAtHydrophones(sound, sourceXy, noiseLevel, hydrophones=HYDROPHONES, se
         recordings.append(recording)
     return recordings
 
-def detect_and_save_calls(recordings, hydrophone_ids=None, threshold=0.3):
+def detect_and_save_calls(
+    recordings,
+    hydrophone_ids=None,
+    threshold=0.3,
+    output_dir="calls"
+):
     if hydrophone_ids is None:
         hydrophone_ids = list(range(len(recordings)))
 
@@ -69,6 +74,7 @@ def detect_and_save_calls(recordings, hydrophone_ids=None, threshold=0.3):
                 audio_bytes=audio_bytes,
                 hydrophone_id=hydrophone_id,
                 sample_rate=SAMPLE_RATE,
+                output_dir=output_dir
             )
             saved.append(record)
 
