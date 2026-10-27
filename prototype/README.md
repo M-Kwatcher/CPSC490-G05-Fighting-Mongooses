@@ -32,7 +32,7 @@ python -m locator.smoke           # one fake whale through the whole locator, no
 
 ```bash
 cd prototype
-python -m pytest tests -q         # 41 tests
+python -m pytest tests -q       # all prototype tests
 ```
 
 CI runs exactly these tests on every pull request (job **Prototype build &
