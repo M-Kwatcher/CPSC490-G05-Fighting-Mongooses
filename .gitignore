@@ -33,3 +33,5 @@ proposal/*.docx
 # and the worked example's output
 !proposal/reference.docx
 !proposal/example-proposal.docx
+
+calls/
