@@ -7,9 +7,9 @@ Right now it holds:
 
 - **`locator/`** — Goal 2: where a whale call came from. Direction (#15) and
   distance (#16) from hydrophone recordings.
-- **`login.py`** — the course's example slice (story #3, task #5), kept as a
-  reference for the shape: a small module, a test per acceptance criterion,
-  and run instructions that work on a fresh machine.
+  Run `python -m locator.smoke` to check it end to end.
+- **`locator/save_call.py`** — saves detected calls as .wav files with a
+  timestamp and hydrophone ID (#13).
 
 ## Setup (once, from the repository root)
 
@@ -17,6 +17,7 @@ Right now it holds:
 python -m venv .venv
 .venv\Scripts\activate            # Windows (Mac/Linux: source .venv/bin/activate)
 pip install -r prototype/requirements.txt pytest
+copy prototype\.env.example prototype\.env   # Mac/Linux: cp; then fill in your values
 ```
 
 ## How to run
@@ -24,14 +25,14 @@ pip install -r prototype/requirements.txt pytest
 ```bash
 cd prototype
 python -m locator.demo_delay      # plots a test sound and a copy 160 samples later
-python login.py                   # course example: prints a truncated session token
+python -m locator.smoke           # one fake whale through the whole locator, no plots
 ```
 
 ## How to test
 
 ```bash
 cd prototype
-python -m pytest tests -q         # 43 tests
+python -m pytest tests -q       # all prototype tests
 ```
 
 CI runs exactly these tests on every pull request (job **Prototype build &
@@ -41,9 +42,9 @@ tests**).
 
 | Sprint | Increment |
 |---|---|
-| v0 (Sep 27) | course example: login check + 4 tests |
+| v0 (Sep 27) | course example: login check (removed in Sprint 2) |
 | Sprint 1 | proposal and project board (no new prototype code) |
-| Sprint 2 | locator: direction from 2 hydrophones (#15, 17 tests) and distance from 4 hydrophones (#16, 22 tests) |
+| Sprint 2 | locator: direction (#15, 17 tests), distance from 4 hydrophones (#16, 22 tests), saving calls (#13, 2 tests), smoke run, .env.example |
 
 ## Locator (#15, #16)
 
@@ -58,6 +59,8 @@ slightly later, and those small delays give the direction and distance.
 | `locator/tdoa.py` | Direction (#15): `findDelay` (cross-correlation), `delayToAngle`, `estimateAngle` |
 | `locator/locate.py` | Distance (#16): `predictedDelays`, `estimatePosition` (least squares), `estimateDistance` |
 | `locator/demo_delay.py` | Plot of a sound and its delayed copy |
+| `locator/save_call.py` | Saves a detected call as a .wav with timestamp and hydrophone ID (#13) |
+| `locator/smoke.py` | Smoke run: one fake whale, prints direction and distance |
 
 ### What it proves — direction (#15)
 
