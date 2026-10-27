@@ -4,7 +4,9 @@ import numpy as np
 from scipy.signal import chirp
 
 from locator.config import HYDROPHONES, SAMPLE_RATE, SPEED_OF_SOUND
+from locator.save_call import save_call
 
+INT16_MAX = 32767 # max amplitude for 16-bit PCM audio
 
 def makeSound(durationS):
     """Return a short test sound (a chirp) as a NumPy array."""
@@ -54,3 +56,27 @@ def recordAtHydrophones(sound, sourceXy, noiseLevel, hydrophones=HYDROPHONES, se
         recordings.append(recording)
     return recordings
 
+def detect_and_save_calls(
+    recordings,
+    hydrophone_ids=None,
+    threshold=0.3,
+    output_dir="calls"
+):
+    if hydrophone_ids is None:
+        hydrophone_ids = list(range(len(recordings)))
+
+    saved = []
+
+    for hydrophone_id, recording in zip(hydrophone_ids, recordings):
+        if np.max(np.abs(recording)) > threshold:
+            audio_bytes = (recording * INT16_MAX).astype(np.int16).tobytes()
+
+            record = save_call(
+                audio_bytes=audio_bytes,
+                hydrophone_id=hydrophone_id,
+                sample_rate=SAMPLE_RATE,
+                output_dir=output_dir
+            )
+            saved.append(record)
+
+    return saved   

@@ -184,7 +184,7 @@ buildable. CI gate G9 fails if a document exists in `docs/specs/` or
 
 | Document | Kind | Covers | Issues |
 |---|---|---|---|
-| 〈docs/specs/account-management.md〉 | specification | 〈account management requirements〉 | 〈#n, #n〉 |
+| [docs/specs/goal-2-locator.md](../docs/specs/goal-2-locator.md) | specification | Goal 2 locator: direction, distance, demo, speed of sound | #14, #15, #16, #17, #18 |
 | 〈docs/design/architecture.md〉 | design | 〈system architecture + data model〉 | 〈#n〉 |
 
 〈The scaffold ships `docs/specs/example-spec.md` and
