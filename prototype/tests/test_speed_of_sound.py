@@ -1,23 +1,18 @@
-import numpy as np
-from prototype.locator.config import SPEED_OF_SOUND
-from prototype.locator.tdoa import delayToAngle
+import sys
+from pathlib import Path
+import pytest
 
-def test_delayToAngle_uses_seawater_speed():
-    #Arrange
-    delayS = 0.001 #1 millisecond delay
-    spacingM = 1.0 # hydrophones 1 meter apart
+# Add repo root to path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-    #Expected ratio = (c * delay) / spacing
-    expected_ratio = SPEED_OF_SOUND * delayS / spacingM
+from locator import config  # noqa: E402
+from locator.tdoa import delayToAngle  # noqa: E402
 
-    #Clip to [-1, 1] just like the function does
-    expected_ratio = np.clip(expected_ratio, -1.0, 1.0)
 
-    #Expected angle in degrees
-    expected_angle = float(np.degrees(np.arcsin(expected_ratio)))
+def testSpeedOfSoundIsSeawater():
+    assert config.SPEED_OF_SOUND == 1500.0
 
-    #Act
-    angle = delayToAngle(delayS, spacingM)
 
-    #Assert
-    assert abs(angle - expected_angle) < 1e-6
+def testDelayToAngleUsesSeawaterSpeed():
+    # 3.33 ms at 10 m spacing is 30 degrees only at 1,500 m/s (343 m/s would give ~6.6)
+    assert delayToAngle(1 / 300, 10) == pytest.approx(30.0)
