@@ -21,9 +21,19 @@ to them.
 
 | ID | Requirement | Story |
 |---|---|---|
-| FR-1 | When a whale call is heard, the detector shall recognize it as such | #10 |
-| FR-2 | When recognizing a whale call, it shall also identify what species it is | #11 |
-| FR-3 | When boat noises are heard, the detector will ignore it | #12 |
-| FR-4 | In a simulated set-up (whale call in empty water), it will be at least 80% accurate in a test set | #10 |
-| FR-5 | In a simulated set-up (whale call with boat noises), it will be at least 85% accurate in a test set | #12 |
-| FR-6 | In a simulated set-up (whale calls from different species), it will be at least 75% accurate in a test set | #11 |
+| FR-1 | When a whale call is heard, the detector shall recognize it as such. | #10 |
+| FR-2 | When a whale call is heard, the detector will save the audio clip, time, and hydrophone ID. | #13 |
+| FR-3 | When recognizing a whale call, it shall also identify what species it is. | #11 |
+| FR-4 | When boat noises are heard, the detector will ignore it. | #12 |
+| FR-5 | In a simulated set-up (whale call in empty water), it will be at least 80% accurate in a test set. | #10 |
+| FR-6 | In a simulated set-up (whale call with boat noises), it will be at least 85% accurate in a test set. | #12 |
+| FR-7 | In a simulated set-up (whale calls from different species), it will be at least 75% accurate in a test set. | #11 |
+
+## Non-functional Requirements
+
+| ID | Requirement | Why it matters |
+|---|---|---|
+| NFR-1 | A different detector is created for each species of whale to all run simultaneously | Each whale noise exists at a different frequency and noise length, so creating multiple detectors as specialists reduces the chance of the detector misinterpreting the data. |
+| NFR-2 | FR-6 stills holds true when mixed with boat noises | The ocean can be noisy, so we need to make sure it can accurately identify despite the noise. |
+| NFR-3 | The simulations use untrained audio. | Using the same audio doesn't prove the detector knows what to look for, just that it can recognize patterns. |
+| NFR-4 | Every functional requirement has an automated test that is ran by CI every pull request. | Ensures code changes won't affect results. |
