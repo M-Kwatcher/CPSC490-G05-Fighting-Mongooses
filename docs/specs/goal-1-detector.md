@@ -44,3 +44,10 @@ to them.
 - [ ] Models are trained using only 80-85% of the database, so the remainder can be for testing.
 - [ ] `python .github/scripts/check_repo.py` is green and the prototype tests pass.
 
+## Open Questions
+
+| Question | Owner | Needed By |
+|---|---|---|
+| Where do the audio clips save to? | Team | Sprint 3 |
+| How will the detector read the database during training? | Max | Sprint 3 |
+| What type of audio file should the clips be saved as? | Aylani | Sprint 3 |
