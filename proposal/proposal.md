@@ -203,12 +203,22 @@ G8 fails if such an issue exists that this section does not link.
 
 | Issue | Type | Activity | Parent | Owner | Sprint |
 |---|---|---|---|---|---|
-| 〈#n〉 | 〈task〉 | 〈stand up the prototype login endpoint〉 | 〈#story〉 | 〈owner〉 | 〈Sprint 1〉 |
-| 〈#n〉 | 〈feature/enhancement/bug/task/sub-task〉 | 〈…〉 | 〈#story〉 | 〈…〉 | 〈…〉 |
+| [task:#20](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/20) | task | Write the Sprint 1 review | — | Aylani | Sprint 1 |
+| [task:#24](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/24) | task | Fix Goal 1 link formatting | [epic:#8](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/8) | Isabel | Sprint 1 |
+| [task:#25](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/25) | task | Fix Goal 2 link formatting | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Isabel | Sprint 1 |
+| [task:#26](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/26) | task | Comparative analysis (§1.1) | — | Matt | Sprint 1 |
+| [task:#33](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/33) | task | Merge main back into develop | — | Aylani | Sprint 1 |
+| [task:#29](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/29) | task | Finish the Sprint 1 review | — | Aylani | Sprint 2 |
+| [task:#31](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/31) | task | Fill meetings attended in the Sprint 1 review | — | Aylani | Sprint 2 |
+| [task:#35](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/35) | task | Release 0.1 to main | — | Aylani | Sprint 2 |
+| [task:#41](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/41) | task | Write the Goal 2 specification | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 2 |
+| [task:#42](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/42) | task | Clean up prototype/ for a fresh-machine setup | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 2 |
+| [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49) | task | Locator design doc | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
+| [task:#50](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/50) | task | Locator works at the dataset's sample rate | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
+| [task:#51](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/51) | task | Fix reference [1] in the prototype README | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
+| [task:#52](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/52) | task | Sprint 3 review | — | Aylani | Sprint 3 |
+| [task:#53](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/53) | task | List work items in proposal §4 | — | Aylani | Sprint 3 |
 
-〈Replace these rows with your own, and keep the table current as you file new
-issues — with §2 it gives a reader every planned activity in one place, each
-traceable to the objective it serves.〉
 
 ## 5. Project Outcomes
 
