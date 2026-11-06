@@ -37,3 +37,10 @@ to them.
 | NFR-2 | FR-6 stills holds true when mixed with boat noises | The ocean can be noisy, so we need to make sure it can accurately identify despite the noise. |
 | NFR-3 | The simulations use untrained audio. | Using the same audio doesn't prove the detector knows what to look for, just that it can recognize patterns. |
 | NFR-4 | Every functional requirement has an automated test that is ran by CI every pull request. | Ensures code changes won't affect results. |
+
+## Acceptance Criteria
+- [ ] FR-1 through FR-7 have a test that fails if the behavior is removed.
+- [ ] **TEMP** FR-2 and FR-3 are output to *file* using *command*.
+- [ ] Models are trained using only 80-85% of the database, so the remainder can be for testing.
+- [ ] `python .github/scripts/check_repo.py` is green and the prototype tests pass.
+
