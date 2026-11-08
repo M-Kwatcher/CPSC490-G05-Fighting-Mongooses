@@ -13,3 +13,12 @@ later sends what it detectors to the locator.
 """ADD DIAGRAM WHEN MERGED"""
 
 *Figure 1- *
+
+## 2. Components
+
+| Component | Responsibility | Interface | Where |
+|---|---|---|---|
+| audio converter | Converts the audio files stored in the database to a readable format for the detector (.npz) | Audio file -> `/data` | `prototype/ai-detector` |
+| ai trainer | Builds/trains the models based off the files located within data. Model stored in a pt file | `/data` -> model.pt | `prototype/ai-detector/whale_detector.py` |
+| live detector | Runs the ai indefinitely, forwarding the recording, time, and hydrophone ID when hearing a whale | live audio -> `/recordings` | `prototype/ai-detector` |
+
