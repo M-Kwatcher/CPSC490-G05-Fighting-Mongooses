@@ -50,6 +50,18 @@ $$\Delta t_i = \frac{r_i - r_1}{c}$$
 where rᵢ is the distance from (x, y) to hydrophone i. `estimatePosition()` uses least squares (`scipy.optimize.least_squares`) to find the (x, y) whose predicted delays best match the measured ones. It starts from 36 guesses around the array and keeps the best fit, so it does not get stuck in a wrong answer. `estimateDistance()` then returns the distance from the array center to that point ([story:#16](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/16)).
 
 ## 3. Data model
+The locator does not store anything; it works on data held in memory and returns plain numbers. Every value uses SI units (meters, seconds) except angles, which are in degrees.
+
+| Data | Shape | Units | Produced by → used by |
+|---|---|---|---|
+| Recording | 1-D NumPy array, one per hydrophone, all the same length | samples at 48 kHz | `recordAtHydrophones()` (later: real hydrophones) → `findDelay()` |
+| Hydrophone positions | list of (x, y) tuples | meters | `config.py` → `delayToAngle()`, `estimatePosition()` |
+| Delay | float (one per pair, or one per hydrophone after the first) | seconds | `findDelay()`, `measuredDelays()` → `delayToAngle()`, `estimatePosition()` |
+| Direction | float, −90° to 90° | degrees | `delayToAngle()` → caller |
+| Source position | (x, y) tuple | meters | `estimatePosition()` → `estimateDistance()` |
+| Distance | float | meters | `estimateDistance()` → caller |
+
+Saving a located call (its direction, distance and time) belongs to the shared Postgres database designed by the team for Goal 1's saved calls. Connecting the locator's output to it is planned for CPSC 491 (Figure 1).
 
 ## 4. Data flow
 
