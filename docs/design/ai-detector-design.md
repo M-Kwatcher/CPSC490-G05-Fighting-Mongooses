@@ -12,7 +12,7 @@ later sends what it detectors to the locator.
 
 """ADD DIAGRAM WHEN MERGED"""
 
-*Figure 1-*
+*Figure 1- System Context. The blue boxes surrounded by a dotted line show what is in context for the detector. The gray boxes outisde these lines shows how the detector connects to other pieces in the system.*
 
 ## 2. Components
 
@@ -26,7 +26,7 @@ later sends what it detectors to the locator.
 
 """MODEL SHOWING THE TRAINING"""
 
-*Figure 2-*
+*Figure 2- *
 
 ## 4. Data Flow (Level 1)
 
