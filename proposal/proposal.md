@@ -158,7 +158,13 @@ trade-off each. If it runs past a page, you are writing §4.〉
 > Describe the expected activities to achieve the stated goals, e.g.,
 > software development process.
 
-〈Your environment, resources, and planned activities.〉
+The system is developed in Python, which offers mature libraries for audio processing, signal processing, and machine learning. The machine learning components, namely the whale call detector and species classifier of Goal 1, will be built with PyTorch, using librosa to load the recordings and convert them into spectrograms and scikit-learn to compute evaluation metrics such as the accuracy on the held-out test sets named in Objectives 1.2 through 1.4. The locator of Goal 2 relies on numerical signal processing rather than deep learning, and is implemented with NumPy and SciPy.
+
+Whale call information is stored in a database that is created and configured through Docker Compose (`docker_compose.yaml`), with its initialization scripts kept in `db/init`. Using Docker allows every team member to create the same database on their own machine. The recorded whale calls held in this database form the audio dataset used to train and evaluate the detector, as described in Objective 1.1; filling the database with whale calls, ambient noise, and boat noise is tracked in [task:#56](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/56). The data is stored on a PostgreSQL database.
+
+Objectives 2.1 through 2.3 specify that the locator is evaluated in simulated setups with two hydrophones, so the evaluation does not depend on physical hydrophone hardware or ocean deployments.
+
+Work follows an iterative process of four two-week sprints, from Sprint 1, which began on September 29, through Sprint 4, which ends on November 23. Each issue on the sprint board has one assignee, a sprint milestone, a priority, and a story-point estimate. Changes reach the shared repository only through pull requests that another team member reviews, and no one approves their own pull request. The activities that deliver the goals of Section 2 are listed in the table at the end of this section.
 
 **Diagrams belong in this section.** Include at minimum a high-level
 architecture diagram and a system (context) diagram; add the ER/EER model and
@@ -168,11 +174,7 @@ building and what it depends on. Draw them with any graphical tool
 copies in `docs/design/` with both editable source and exported image, and
 reference them here.
 
-〈Number every figure, caption it, and point at it from the prose — "Figure 1
-shows the three deployment tiers and the trust boundary between them." A
-figure the text never mentions is decoration. See `docs/design/DIAGRAMS.md`
-for tools, conventions, and the rule that every box and arrow must be
-verified against reality.〉
+Four diagrams are planned for this project, with their editable sources and exported images kept in `docs/design/`. The first shows the complete working model of the system ([task:#67](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/67)). The second shows the structure of the whale call detector ([task:#58](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/58)), the third shows the locator ([task:#65](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/65)), and the fourth shows the database that stores the whale calls ([task:#66](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/66)). The overall diagram effort is tracked in [task:#57](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/57). Each figure will be numbered, captioned, and referenced from the text of this section once it is complete. 〈Insert Figures 1 to 4 here.〉
 
 ### Specification and design documents
 
@@ -184,8 +186,10 @@ buildable. CI gate G9 fails if a document exists in `docs/specs/` or
 
 | Document | Kind | Covers | Issues |
 |---|---|---|---|
+| [docs/specs/goal-1-detector.md](../docs/specs/goal-1-detector.md) | specification | Goal 1 detector: call detection, species identification, noise discrimination, saved clips | #8, #9, #10, #11, #12, #13 |
 | [docs/specs/goal-2-locator.md](../docs/specs/goal-2-locator.md) | specification | Goal 2 locator: direction, distance, demo, speed of sound | #14, #15, #16, #17, #18 |
-| 〈docs/design/architecture.md〉 | design | 〈system architecture + data model〉 | 〈#n〉 |
+| 〈docs/design/locator-design.md〉 | design | Locator design (Goal 2) | [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49) |
+| 〈docs/design/ai-detector-design.md〉 | design | AI detector architecture (Goal 1) | [task:#70](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/70) |
 
 〈The scaffold ships `docs/specs/example-spec.md` and
 `docs/design/example-design.md` as worked examples — read them, then delete
@@ -204,20 +208,31 @@ G8 fails if such an issue exists that this section does not link.
 | Issue | Type | Activity | Parent | Owner | Sprint |
 |---|---|---|---|---|---|
 | [task:#20](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/20) | task | Write the Sprint 1 review | — | Aylani | Sprint 1 |
-| [task:#24](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/24) | task | Fix Goal 1 link formatting | [epic:#8](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/8) | Isabel | Sprint 1 |
-| [task:#25](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/25) | task | Fix Goal 2 link formatting | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Isabel | Sprint 1 |
+| [task:#24](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/24) | task | Fix Goal 1 link formatting | Goal 1 | Isabel | Sprint 1 |
+| [task:#25](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/25) | task | Fix Goal 2 link formatting | Goal 2 | Isabel | Sprint 1 |
 | [task:#26](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/26) | task | Comparative analysis (§1.1) | — | Matt | Sprint 1 |
 | [task:#33](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/33) | task | Merge main back into develop | — | Aylani | Sprint 1 |
 | [task:#29](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/29) | task | Finish the Sprint 1 review | — | Aylani | Sprint 2 |
 | [task:#31](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/31) | task | Fill meetings attended in the Sprint 1 review | — | Aylani | Sprint 2 |
 | [task:#35](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/35) | task | Release 0.1 to main | — | Aylani | Sprint 2 |
-| [task:#41](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/41) | task | Write the Goal 2 specification | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 2 |
-| [task:#42](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/42) | task | Clean up prototype/ for a fresh-machine setup | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 2 |
-| [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49) | task | Locator design doc | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
-| [task:#50](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/50) | task | Locator works at the dataset's sample rate | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
-| [task:#51](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/51) | task | Fix reference [1] in the prototype README | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
+| [task:#41](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/41) | task | Write the Goal 2 specification | Goal 2 | Aylani | Sprint 2 |
+| [task:#42](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/42) | task | Clean up prototype/ for a fresh-machine setup | Goal 2 | Aylani | Sprint 2 |
+| [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49) | task | Locator design doc | Goal 2 | Aylani | Sprint 3 |
+| [task:#50](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/50) | task | Locator works at the dataset's sample rate | Goal 2 | Aylani | Sprint 3 |
+| [task:#51](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/51) | task | Fix reference [1] in the prototype README | Goal 2 | Aylani | Sprint 3 |
 | [task:#52](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/52) | task | Sprint 3 review | — | Aylani | Sprint 3 |
 | [task:#53](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/53) | task | List work items in proposal §4 | — | Aylani | Sprint 3 |
+| [task:#56](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/56) | task | Fill the database with whale calls, ambient noise, and boat noises | Objective 1.1 | 〈owner〉 | Sprint 4 |
+| [task:#57](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/57) | task | Create diagrams of the project | — | 〈owner〉 | — |
+| [task:#58](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/58) | task | Create a diagram of the AI | Goal 1 | 〈owner〉 | Sprint 3 |
+| [task:#61](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/61) | task | Remerge main into develop | — | 〈owner〉 | — |
+| [task:#63](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/63) | task | Write the specifications file for the AI detector | Goal 1 | 〈owner〉 | Sprint 3 |
+| [task:#65](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/65) | task | Create a diagram for the locator | Goal 2 | Aylani | Sprint 3 |
+| [task:#66](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/66) | task | Create a diagram of the database | — | Max | Sprint 3 |
+| [task:#67](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/67) | task | Diagram demonstrating the full working model | — | 〈owner〉 | Sprint 3 |
+| [task:#68](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/68) | task | §3: Design and Diagrams | — | 〈owner〉 | — |
+| [task:#69](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/69) | task | Create design files | — | 〈owner〉 | Sprint 3 |
+| [task:#70](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/70) | task | AI detector design | Goal 1 | 〈owner〉 | Sprint 3 |
 
 
 ## 5. Project Outcomes
