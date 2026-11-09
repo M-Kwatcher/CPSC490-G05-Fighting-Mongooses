@@ -76,6 +76,7 @@ flowchart LR
 ```
 
 *Figure 2. Data flow through the locator.*
+Figure 2 shows how a set of recordings becomes a location. Every path starts at `findDelay()`, which cross-correlates two recordings and returns how many seconds later the second one heard the sound. From there the flow splits by layout. With two hydrophones, the single delay goes to `delayToAngle()`, which returns the direction. With four hydrophones, `measuredDelays()` collects one delay per hydrophone after the first, and `estimatePosition()` fits the (x, y) whose predicted delays match them best; `estimateDistance()` turns that point into a distance from the array center. `config.py` feeds the speed of sound, sample rate and hydrophone positions into every step (dotted lines), so changing a constant there, such as the speed of sound for a different water temperature, changes every result in one place ([story:#15](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/15), [story:#16](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/16), [story:#18](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/18)).
 
 ## 5. Key decisions
 
