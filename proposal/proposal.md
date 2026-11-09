@@ -3,7 +3,7 @@
 **Department of Computer Science**
 **CPSC 490 Undergraduate Seminar in Computer Science — Proposal for Capstone Project**
 
-**Group 5 — Fighting Mongooses** · Sponsor: 〈RTX-3 / EL-1 / SNX-n / independent〉
+**Group 5 — Fighting Mongooses** · Sponsor: independent
 Authors: Kwatcher, Max; Brambila, Matthew; Sainz, Michael; Tran, Aylani; Gargallo, Isabel
 Date: 〈YYYY-MM-DD〉
 
@@ -160,7 +160,7 @@ trade-off each. If it runs past a page, you are writing §4.〉
 
 The system is developed in Python, which offers mature libraries for audio processing, signal processing, and machine learning. The machine learning components, namely the whale call detector and species classifier of Goal 1, will be built with PyTorch, using librosa to load the recordings and convert them into spectrograms and scikit-learn to compute evaluation metrics such as the accuracy on the held-out test sets named in Objectives 1.2 through 1.4. The locator of Goal 2 relies on numerical signal processing rather than deep learning, and is implemented with NumPy and SciPy.
 
-Whale call information is stored in a database that is created and configured through Docker Compose (`docker_compose.yaml`), with its initialization scripts kept in `db/init`. Using Docker allows every team member to create the same database on their own machine. The recorded whale calls held in this database form the audio dataset used to train and evaluate the detector, as described in Objective 1.1; filling the database with whale calls, ambient noise, and boat noise is tracked in [task:#56](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/56). The data is stored on a PostgreSQL database.
+Whale call information is stored in a database that is created and configured through Docker Compose (`docker_compose.yaml`), with its initialization scripts kept in `db/init`. Using Docker allows every team member to create the same database on their own machine. The recorded whale calls held in this database form the audio dataset used to train and evaluate the detector, as described in Objective 1.1; filling the database with whale calls, ambient noise, and boat noise is tracked in [task:#56](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/56). This information will be stored using postgres as the database.
 
 Objectives 2.1 through 2.3 specify that the locator is evaluated in simulated setups with two hydrophones, so the evaluation does not depend on physical hydrophone hardware or ocean deployments.
 
@@ -186,10 +186,9 @@ buildable. CI gate G9 fails if a document exists in `docs/specs/` or
 
 | Document | Kind | Covers | Issues |
 |---|---|---|---|
-| [docs/specs/goal-1-detector.md](../docs/specs/goal-1-detector.md) | specification | Goal 1 detector: call detection, species identification, noise discrimination, saved clips | #8, #9, #10, #11, #12, #13 |
-| [docs/specs/goal-2-locator.md](../docs/specs/goal-2-locator.md) | specification | Goal 2 locator: direction, distance, demo, speed of sound | #14, #15, #16, #17, #18 |
-| 〈docs/design/locator-design.md〉 | design | Locator design (Goal 2) | [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49) |
-| 〈docs/design/ai-detector-design.md〉 | design | AI detector architecture (Goal 1) | [task:#70](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/70) |
+| [docs/specs/goal-1-detector.md](../docs/specs/goal-1-detector.md) | specification | Goal 1 detector: call detection, species identification, noise discrimination, saved clips | Goal 1 (Objectives 1.1 to 1.5) |
+| [docs/specs/goal-2-locator.md](../docs/specs/goal-2-locator.md) | specification | Goal 2 locator: direction, distance, demo, speed of sound | Goal 2 (Objectives 2.1 to 2.4) |
+
 
 〈The scaffold ships `docs/specs/example-spec.md` and
 `docs/design/example-design.md` as worked examples — read them, then delete
@@ -208,6 +207,7 @@ G8 fails if such an issue exists that this section does not link.
 | Issue | Type | Activity | Parent | Owner | Sprint |
 |---|---|---|---|---|---|
 | [task:#20](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/20) | task | Write the Sprint 1 review | — | Aylani | Sprint 1 |
+| [task:#23](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/23) | task | Update the README.md file | — | Max | Sprint 1 |
 | [task:#24](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/24) | task | Fix Goal 1 link formatting | Goal 1 | Isabel | Sprint 1 |
 | [task:#25](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/25) | task | Fix Goal 2 link formatting | Goal 2 | Isabel | Sprint 1 |
 | [task:#26](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/26) | task | Comparative analysis (§1.1) | — | Matt | Sprint 1 |
@@ -217,6 +217,7 @@ G8 fails if such an issue exists that this section does not link.
 | [task:#35](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/35) | task | Release 0.1 to main | — | Aylani | Sprint 2 |
 | [task:#41](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/41) | task | Write the Goal 2 specification | Goal 2 | Aylani | Sprint 2 |
 | [task:#42](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/42) | task | Clean up prototype/ for a fresh-machine setup | Goal 2 | Aylani | Sprint 2 |
+| [task:#47](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/47) | task | Merge develop into main | — | Max | Sprint 2 |
 | [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49) | task | Locator design doc | Goal 2 | Aylani | Sprint 3 |
 | [task:#50](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/50) | task | Locator works at the dataset's sample rate | Goal 2 | Aylani | Sprint 3 |
 | [task:#51](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/51) | task | Fix reference [1] in the prototype README | Goal 2 | Aylani | Sprint 3 |
