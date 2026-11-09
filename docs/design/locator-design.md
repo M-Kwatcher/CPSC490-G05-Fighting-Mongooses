@@ -39,11 +39,44 @@ The prototype uses two hydrophone layouts, both set in `config.py`. For directio
 
 Both estimates start from the time difference of arrival (TDOA): a hydrophone farther from the whale hears the call slightly later. `findDelay()` measures that delay by cross-correlating two recordings and finding the shift where they line up best. At 48 kHz, one sample is 1/48,000 s, which is 3.125 cm of travel at 1,500 m/s, so the delay is measured to the nearest 3.125 cm.
 
-For direction, if the delay is Δt and the hydrophones are d apart, the extra distance the sound traveled is c·Δt, so the angle is
+For direction, the locator assumes a far-field source so the incoming sound wave can be approximated as a plane wave. 
 
+Let:
+
+- d = spacing between two hydrophones
+- c = speed of sound in water
+- Δt = measured time difference of arrival 
+- θ = angle of arrival measured from the line perpendicular to the hydrophone pair 
+
+The difference in travel distance between the hydrophones is:
+
+ΔL = cΔt
+
+From the geometry of the hydrophone pair: 
+
+ΔL = d sin(θ)
+
+Combining the equations: 
+
+cΔt = d sin(θ)
+
+Solving for θ:
 $$\theta = \arcsin\left(\frac{c\,\Delta t}{d}\right)$$
 
-where c = 1,500 m/s is the speed of sound in seawater ([story:#18](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/18)). The ratio is clipped to [−1, 1] before the arcsin so a noisy delay cannot produce an invalid angle.
+A positive Δt means the sound reaches the first hydrophone before the second hydrophone. A negative Δt means the sound reaches the second hydrophone before the first. Positive and negative angles follow the same convention. 
+
+The ratio is clipped to [-1,1] before applying arcsin so that noisy measurements cannot produce invalid angles. 
+
+
+### Assumptions
+
+Direction estimation relies on the following assumptions:
+- The whale is far away compared to the hydrophone spacing.
+- Sound travels in a straight line between the whale and hydrophones.
+- The speed of sound remains constant at 1500 m/s.
+- The incoming wavefront is approximately planar across the hydrophone pair.
+
+These assumptions are appropriate for the simulator-based prototype but may introduce error when using real recordings. 
 
 For distance, a candidate source position (x, y) predicts a delay for each hydrophone i relative to the first:
 
