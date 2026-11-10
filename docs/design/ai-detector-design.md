@@ -47,7 +47,7 @@ flowchart LR
 ```mermaid
 ---
 config:
-  theme: neutral
+  theme: default
 ---
 flowchart LR
     hydrophone["Listening Hydrophone"] -- Audio --> aiDetector["AI Detector"]
