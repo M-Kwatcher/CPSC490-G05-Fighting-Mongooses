@@ -45,6 +45,10 @@ flowchart LR
 ## 4. Data Flow (Level 1)
 
 ```mermaid
+---
+config:
+  theme: neutral
+---
 flowchart LR
     hydrophone["Listening Hydrophone"] -- Audio --> aiDetector["AI Detector"]
     boatNoises["Boat Noises<br>Ambient Noises<br>Whale Species Noises"] -. Trained With .-> aiDetector
@@ -52,17 +56,13 @@ flowchart LR
     saveInfo --> recordedAudio["Recorded Audio"] & hydrophoneID["Hydrophone ID"] & timestamp["Timestamp"] & species["Species"]
     aiDetector -- Heard Boat --> aiDetector
 
-     hydrophone:::hydrophone
-     aiDetector:::detector
-     boatNoises:::training
-     recordedAudio:::output
-     hydrophoneID:::output
-     timestamp:::output
-     species:::output
-    classDef hydrophone stroke:#22d3ee,fill:#ecfeff
-    classDef detector stroke:#a78bfa,fill:#f5f3ff
-    classDef output stroke:#4ade80,fill:#f0fdf4
-    classDef training stroke:#fb923c,fill:#fff7ed
+     hydrophone
+     aiDetector
+     boatNoises
+     recordedAudio
+     hydrophoneID
+     timestamp
+     species
 ```
 
 *Figure 3-*
