@@ -23,7 +23,6 @@ flowchart LR
 
     audioConverter@{ shape: doc}
     aiDetector@{ shape: doc}
-    linkStyle 1 stroke:#666,fill:none
 ```
 
 *Figure 1- System Context. Solid rectangle shows what is in context for the detector. Solid lines show what has been designed in prototype, both in and out of context. Dotted lines show what will be implemented in CPSC 491.*
