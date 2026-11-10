@@ -47,14 +47,15 @@ flowchart LR
 ```mermaid
 ---
 config:
-  theme: neutral
+  theme: redux
 ---
 flowchart LR
     hydrophone["Listening Hydrophone"] -- Audio --> aiDetector["AI Detector"]
     boatNoises["Boat Noises<br>Ambient Noises<br>Whale Species Noises"] -. Trained With .-> aiDetector
     aiDetector -- Detected Whale --> saveInfo["saveInfo"]
+    saveInfo -- Go Back to Listening --> aiDetector
     saveInfo --> recordedAudio["Recorded Audio"] & hydrophoneID["Hydrophone ID"] & timestamp["Timestamp"] & species["Species"]
-    aiDetector -- Heard Boat --> aiDetector
+    aiDetector -- Heard Boat/Ambience --> aiDetector
 
      hydrophone
      aiDetector
@@ -65,7 +66,9 @@ flowchart LR
      species
 ```
 
-*Figure 3-*
+*Figure 3- Diagram of how the detector reacts if it is hearing a noise.*
+
+Figure 3 shows how the data flows within the detector. It starts with the detector being trained on the three noise class, with the Whale Species class being that of the noises made by the species we want to detect. After being trained to sufficiency, it is then connected to a live hydrophone to listen for any possible noises made. While listening, if it hears a boat or ambient noise, it simply goes back to listening without doing anything. If it hears a whale, it saves the necessary information for the locator/documentation. It saves a recording of the whale noise, the ID of the hydrophone that recorded it, when it was recorded, and what species made the call. Once saved, it goes back to listening for more noises.
 
 ## 5. Key Decisions
 
