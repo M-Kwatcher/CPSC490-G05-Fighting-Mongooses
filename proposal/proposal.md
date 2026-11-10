@@ -223,7 +223,9 @@ G8 fails if such an issue exists that this section does not link.
 | [task:#51](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/51) | task | Fix reference [1] in the prototype README | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
 | [task:#52](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/52) | task | Sprint 3 review | — | Aylani | Sprint 3 |
 | [task:#53](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/53) | task | List work items in proposal §4 | — | Aylani | Sprint 3 |
-
+| [task:#75](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/75) | task | Make test scenarios for Objective 2.3 | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
+| [task:#76](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/76) | task | Run the locator through the test scenarios | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
+| [task:#77](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/77) | task | Build a demo of the direction detection logic | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
 
 ## 5. Project Outcomes
 
