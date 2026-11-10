@@ -185,7 +185,12 @@ buildable. CI gate G9 fails if a document exists in `docs/specs/` or
 | Document | Kind | Covers | Issues |
 |---|---|---|---|
 | [docs/specs/goal-2-locator.md](../docs/specs/goal-2-locator.md) | specification | Goal 2 locator: direction, distance, demo, speed of sound | #14, #15, #16, #17, #18 |
+| [docs/design/locator-design.md](../docs/design/locator-design.md) | design | Goal 2 locator: system context, components, data model, data flow, key decisions, known limits | #14, #15, #16, #18, #49 |
 | 〈docs/design/architecture.md〉 | design | 〈system architecture + data model〉 | 〈#n〉 |
+
+**Goal 2 locator specification.** [goal-2-locator.md](../docs/specs/goal-2-locator.md) defines what the locator must do: estimate the direction of a whale call from two hydrophones and its distance from four, using the speed of sound in seawater. It sets the scope (2-D, simulated recordings in CPSC 490), the functional and non-functional requirements traced to each story, acceptance criteria a teammate can check with the prototype's tests, and open questions such as the dataset's 2 kHz sample rate ([epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14), [story:#15](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/15), [story:#16](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/16), [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17), [story:#18](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/18), [task:#41](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/41)).
+
+**Goal 2 locator design.** [locator-design.md](../docs/design/locator-design.md) explains how the prototype meets that specification. It places the locator between the hydrophone array and the planned detector and database connections, describes its four modules (`config.py`, `simulate.py`, `tdoa.py`, `locate.py`), the data passed between them, and the math behind each estimate. It records the key decisions with the alternatives rejected: cross-correlation over onset detection, least squares over closed-form equations, and four hydrophones in a 50 m square over smaller layouts. It ends with known limits and open work, including sub-sample delay estimation for 2 kHz recordings ([epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14), [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49), [task:#50](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/50)).
 
 〈The scaffold ships `docs/specs/example-spec.md` and
 `docs/design/example-design.md` as worked examples — read them, then delete
@@ -203,12 +208,24 @@ G8 fails if such an issue exists that this section does not link.
 
 | Issue | Type | Activity | Parent | Owner | Sprint |
 |---|---|---|---|---|---|
-| 〈#n〉 | 〈task〉 | 〈stand up the prototype login endpoint〉 | 〈#story〉 | 〈owner〉 | 〈Sprint 1〉 |
-| 〈#n〉 | 〈feature/enhancement/bug/task/sub-task〉 | 〈…〉 | 〈#story〉 | 〈…〉 | 〈…〉 |
-
-〈Replace these rows with your own, and keep the table current as you file new
-issues — with §2 it gives a reader every planned activity in one place, each
-traceable to the objective it serves.〉
+| [task:#20](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/20) | task | Write the Sprint 1 review | — | Aylani | Sprint 1 |
+| [task:#24](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/24) | task | Fix Goal 1 link formatting | [epic:#8](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/8) | Isabel | Sprint 1 |
+| [task:#25](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/25) | task | Fix Goal 2 link formatting | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Isabel | Sprint 1 |
+| [task:#26](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/26) | task | Comparative analysis (§1.1) | — | Matt | Sprint 1 |
+| [task:#33](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/33) | task | Merge main back into develop | — | Aylani | Sprint 1 |
+| [task:#29](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/29) | task | Finish the Sprint 1 review | — | Aylani | Sprint 2 |
+| [task:#31](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/31) | task | Fill meetings attended in the Sprint 1 review | — | Aylani | Sprint 2 |
+| [task:#35](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/35) | task | Release 0.1 to main | — | Aylani | Sprint 2 |
+| [task:#41](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/41) | task | Write the Goal 2 specification | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 2 |
+| [task:#42](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/42) | task | Clean up prototype/ for a fresh-machine setup | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 2 |
+| [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49) | task | Locator design doc | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
+| [task:#50](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/50) | task | Locator works at the dataset's sample rate | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
+| [task:#51](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/51) | task | Fix reference [1] in the prototype README | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
+| [task:#52](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/52) | task | Sprint 3 review | — | Aylani | Sprint 3 |
+| [task:#53](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/53) | task | List work items in proposal §4 | — | Aylani | Sprint 3 |
+| [task:#75](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/75) | task | Make test scenarios for Objective 2.3 | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
+| [task:#76](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/76) | task | Run the locator through the test scenarios | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
+| [task:#77](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/77) | task | Build a demo of the direction detection logic | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
 
 ## 5. Project Outcomes
 
