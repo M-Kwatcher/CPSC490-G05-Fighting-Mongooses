@@ -17,9 +17,9 @@ flowchart LR
         aiDetector["aiTrainer / aiDetector"]
   end
     audioConverter --> aiDetector
-    database[("Input: Database")] -- Audio recordings --> audioConverter
+    database[("Database")] -- Audio recordings --> audioConverter
     aiDetector -. CPSC491: Distance Estimation from detected audio .-> locator["Goal 2: Locator"]
-    liveDetector["Input: Live detector"] -. CPSC491: Audio clip .-> aiDetector
+    liveDetector["Live hydrophone"] -. CPSC491: Audio clip .-> aiDetector
 
     audioConverter@{ shape: doc}
     aiDetector@{ shape: doc}
@@ -27,6 +27,8 @@ flowchart LR
 ```
 
 *Figure 1- System Context. Solid rectangle shows what is in context for the detector. Solid lines show what has been designed in prototype, both in and out of context. Dotted lines show what will be implemented in CPSC 491.*
+
+The detector takes inputs from two sources, our created database and hydrophone we're listening from. The database is what we use to train our AI, using the audio stored in it to teach the detector what a whale sounds like, as well as sounds of what to ignore (boat noises and ambient noises). The detector then takes in audio from the hydrophone that it's listening to. Once it hears a whale, it saves the necessary information, before sensing it to the locator.
 
 ## 2. Components
 
