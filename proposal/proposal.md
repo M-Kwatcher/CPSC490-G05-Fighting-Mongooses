@@ -108,7 +108,8 @@ them to decrease the number of deaths and injuries that whales are sustaining. O
 allow for more whales to reproduce so that they are no longer an endangered species, and better maintain
 the ecosystem.
 
-*brief description of what the proposal discusses, 1-2 sentences*
+Our project uses hydrophones and a trained AI in order to listen for whales. After it hears a whale, it
+calculates how far away it is and where.
 
 ## 1. Introduction
 
