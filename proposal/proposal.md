@@ -87,10 +87,28 @@ Date: 〈YYYY-MM-DD〉
 During the 20th century, we saw the peak of whale hunting with 2.9 million whales being killed.
 This led to the endangerment of many species, such as the North Atlantic right whale and Antarctic
 blue whale. In 1982, the International Whaling Commission (IWC) held a meeting with its member nations
-where they agreed to a global prohibition of whaling starting in 1986. While some species have been able
-to make a comeback from whale hunting as a result of this, others are still at risk due to human
-interference. Nearly half of all documented deaths of the right whale since 1970 were the result of
-either being struck by a ship or entangled in fishing gear.
+where they agreed to a global prohibition of whaling starting in 1986.
+
+While some species have been able to make a comeback from whale hunting, others are still at risk due
+to human interference. Nearly half of all documented deaths of the right whale since 1970 were the result
+of either being struck by a ship or entangled in fishing gear. With the current number of remaining
+right whales being about 382, each avoidable death becomes more significant than the last.
+
+We wanted to create our project with this in mind, so that we could attempt to combat the decline in
+some whale populations, as whales help balance both marine and terrestrial ecosystems. Whale waste is
+an essential nutrient source for phytoplankton, who are responsible for consuming carbon dioxide and
+producing about 70 percent of the Earth's oxygen. They are also the bottom of the marine food chain,
+meaning all marine animals get their nutrients from them, either directly or indirectly. So by
+finding a way to better protect whales, it can strengthen a cycle where they can produce more waste,
+feed more phytoplankton, feed more fish, feeding themselves more, and then producing more waste.
+
+Our project aims to help whale populations further, by locating where any nearby whales are so that ships
+can avoid them. By creating a system that allows us to be learn the location of nearby whales, we can better avoid
+them to decrease the number of deaths and injuries that whales are sustaining. Our hope is that the reduced deaths will
+allow for more whales to reproduce so that they are no longer an endangered species, and better maintain
+the ecosystem.
+
+*brief description of what the proposal discusses, 1-2 sentences*
 
 ## 1. Introduction
 
