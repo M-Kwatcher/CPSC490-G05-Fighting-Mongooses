@@ -84,7 +84,13 @@ Date: 〈YYYY-MM-DD〉
 > paragraph. Abstract should not exceed one page. Any abstract exceeded
 > one-page limit must be shortened.
 
-〈Your abstract. Write it last.〉
+During the 20th century, we saw the peak of whale hunting with 2.9 million whales being killed.
+This led to the endangerment of many species, such as the North Atlantic right whale and Antarctic
+blue whale. In 1982, the International Whaling Commission (IWC) held a meeting with its member nations
+where they agreed to a global prohibition of whaling starting in 1986. While some species have been able
+to make a comeback from whale hunting as a result of this, others are still at risk due to human
+interference. Nearly half of all documented deaths of the right whale since 1970 were the result of
+either being struck by a ship or entangled in fishing gear.
 
 ## 1. Introduction
 
