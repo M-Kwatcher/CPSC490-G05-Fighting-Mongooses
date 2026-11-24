@@ -71,20 +71,32 @@ Date: 〈YYYY-MM-DD〉
 
 ## 0. Abstract
 
-> The primary purpose of abstract is to help the reader understand the main
-> message of current document (proposal in this case) without reading the
-> entire document. Therefore an abstract should include at least one or two
-> paragraph of background (or motivation) information for the project, a
-> brief description of the problem you are trying to solve in this proposal,
-> a proposed ideas or solutions, the significance of your proposed idea
-> elaborating why the proposed idea is non-trivial, significant, or
-> beneficial in one or two paragraphs, the project goals and outcomes in one
-> paragraph, and a brief description of what you will discuss in this
-> proposal, giving a brief outline of this document in 1-2 sentences in one
-> paragraph. Abstract should not exceed one page. Any abstract exceeded
-> one-page limit must be shortened.
+During the 20th century, we saw the peak of whale hunting with 2.9 million whales being killed.
+This led to the endangerment of many species, such as the North Atlantic right whale and Antarctic
+blue whale. In 1982, the International Whaling Commission (IWC) held a meeting with its member nations
+where they agreed to a global prohibition of whaling starting in 1986.
 
-〈Your abstract. Write it last.〉
+While some species have been able to make a comeback from whale hunting, others are still at risk due
+to human interference. Nearly half of all documented deaths of the right whale since 1970 were the result
+of either being struck by a ship or entangled in fishing gear. With the current number of remaining
+right whales being about 382, each avoidable death becomes more significant than the last.
+
+We wanted to create our project with this in mind, so that we could attempt to combat the decline in
+some whale populations, as whales help balance both marine and terrestrial ecosystems. Whale waste is
+an essential nutrient source for phytoplankton, who are responsible for consuming carbon dioxide and
+producing about 70 percent of the Earth's oxygen. They are also the bottom of the marine food chain,
+meaning all marine animals get their nutrients from them, either directly or indirectly. So by
+finding a way to better protect whales, it can strengthen a cycle where they can produce more waste,
+feed more phytoplankton, feed more fish, feeding themselves more, and then producing more waste.
+
+Our project aims to help whale populations further, by locating where any nearby whales are so that ships
+can avoid them. By creating a system that allows us to be learn the location of nearby whales, we can better avoid
+them to decrease the number of deaths and injuries that whales are sustaining. Our hope is that the reduced deaths will
+allow for more whales to reproduce so that they are no longer an endangered species, and better maintain
+the ecosystem.
+
+Our project uses hydrophones and a trained AI in order to listen for whales. After it hears a whale, it
+calculates how far away it is and where.
 
 ## 1. Introduction
 
@@ -185,7 +197,12 @@ buildable. CI gate G9 fails if a document exists in `docs/specs/` or
 | Document | Kind | Covers | Issues |
 |---|---|---|---|
 | [docs/specs/goal-2-locator.md](../docs/specs/goal-2-locator.md) | specification | Goal 2 locator: direction, distance, demo, speed of sound | #14, #15, #16, #17, #18 |
+| [docs/design/locator-design.md](../docs/design/locator-design.md) | design | Goal 2 locator: system context, components, data model, data flow, key decisions, known limits | #14, #15, #16, #18, #49 |
 | 〈docs/design/architecture.md〉 | design | 〈system architecture + data model〉 | 〈#n〉 |
+
+**Goal 2 locator specification.** [goal-2-locator.md](../docs/specs/goal-2-locator.md) defines what the locator must do: estimate the direction of a whale call from two hydrophones and its distance from four, using the speed of sound in seawater. It sets the scope (2-D, simulated recordings in CPSC 490), the functional and non-functional requirements traced to each story, acceptance criteria a teammate can check with the prototype's tests, and open questions such as the dataset's 2 kHz sample rate ([epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14), [story:#15](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/15), [story:#16](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/16), [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17), [story:#18](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/18), [task:#41](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/41)).
+
+**Goal 2 locator design.** [locator-design.md](../docs/design/locator-design.md) explains how the prototype meets that specification. It places the locator between the hydrophone array and the planned detector and database connections, describes its four modules (`config.py`, `simulate.py`, `tdoa.py`, `locate.py`), the data passed between them, and the math behind each estimate. It records the key decisions with the alternatives rejected: cross-correlation over onset detection, least squares over closed-form equations, and four hydrophones in a 50 m square over smaller layouts. It ends with known limits and open work, including sub-sample delay estimation for 2 kHz recordings ([epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14), [task:#49](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/49), [task:#50](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/50)).
 
 〈The scaffold ships `docs/specs/example-spec.md` and
 `docs/design/example-design.md` as worked examples — read them, then delete
@@ -218,7 +235,9 @@ G8 fails if such an issue exists that this section does not link.
 | [task:#51](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/51) | task | Fix reference [1] in the prototype README | [epic:#14](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/14) | Aylani | Sprint 3 |
 | [task:#52](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/52) | task | Sprint 3 review | — | Aylani | Sprint 3 |
 | [task:#53](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/53) | task | List work items in proposal §4 | — | Aylani | Sprint 3 |
-
+| [task:#75](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/75) | task | Make test scenarios for Objective 2.3 | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
+| [task:#76](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/76) | task | Run the locator through the test scenarios | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
+| [task:#77](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/77) | task | Build a demo of the direction detection logic | [story:#17](https://github.com/M-Kwatcher/CPSC490-G05-Fighting-Mongooses/issues/17) | Max | Sprint 4 |
 
 ## 5. Project Outcomes
 
