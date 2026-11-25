@@ -138,11 +138,11 @@ display.
 
 ### References
 
-[1] Callaghan and Berry, EE 98 senior design technical note on sound-source
-direction estimation with a microphone array, Tufts University Electrical and
-Computer Engineering Senior Design Handbook, 2023. [Online]. Available:
+[1] C. Berry, "Where is the Sound?," ECE Senior Capstone Project 2023 Tech
+Notes, Dept. of Electrical and Computer Engineering, Tufts University, 2023.
+[Online]. Available:
 https://sites.tufts.edu/eeseniordesignhandbook/files/2023/05/ee98_shp_Callaghan_Berry.pdf
-(accessed Oct. 16, 2026).
+(accessed Nov. 24, 2026).
 
 [2] The MathWorks, Inc., "Cross-Correlation of Delayed Signal in Noise,"
 Signal Processing Toolbox Documentation. [Online]. Available:
