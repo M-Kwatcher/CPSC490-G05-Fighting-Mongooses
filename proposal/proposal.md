@@ -71,20 +71,13 @@ Date: 〈YYYY-MM-DD〉
 
 ## 0. Abstract
 
-> The primary purpose of abstract is to help the reader understand the main
-> message of current document (proposal in this case) without reading the
-> entire document. Therefore an abstract should include at least one or two
-> paragraph of background (or motivation) information for the project, a
-> brief description of the problem you are trying to solve in this proposal,
-> a proposed ideas or solutions, the significance of your proposed idea
-> elaborating why the proposed idea is non-trivial, significant, or
-> beneficial in one or two paragraphs, the project goals and outcomes in one
-> paragraph, and a brief description of what you will discuss in this
-> proposal, giving a brief outline of this document in 1-2 sentences in one
-> paragraph. Abstract should not exceed one page. Any abstract exceeded
-> one-page limit must be shortened.
+Whales are among the most intelligent and ecologically important animals in the ocean, and there is still much to learn about their migration, population size, and behavior. Whale waste fertilizes the phytoplankton that anchor the marine food chain and produce much of the Earth's oxygen, so healthy whale populations support ocean ecosystems as a whole. Studying them is difficult, however, because researchers must avoid disturbing the animals they want to observe. Accurate data on where whales are, and which species and individuals they are, is also needed to protect threatened populations. Despite the 1986 global ban on commercial whaling, the North Atlantic right whale numbers only about 382, and nearly half of its documented deaths since 1970 trace to ship strikes or fishing-gear entanglement. Each avoidable loss matters.
 
-〈Your abstract. Write it last.〉
+Existing tracking methods fall short. Drones can follow migrating whales, but their engine noise and shadows can disturb the animals, and such disturbance is restricted under the Marine Mammal Protection Act of 1972. Tracking tags give detailed data on individuals, but attaching them is invasive, and tagging every whale in the ocean is impractical. Data collected through disruptive methods may also not reflect natural behavior.
+
+This project presents WILS(Whale Identification/Location System), a passive system that locates and identifies whales from their vocalizations without disturbing them in any way. An array of hydrophones records whale songs and calls. To determine direction, the system uses trigonometry on the angular differences between the hydrophones that detected the same call. To estimate range, it applies a linear regression to the call's observed amplitude, comparing it with the amplitude expected if the whale were adjacent to the array. A trained deep learning model then classifies each call by species and, where the data allows, by individual whale. Because the system only listens, it can monitor continuously over a large area without the cost, risk, or disturbance of drones, tags, or ship-based surveys.
+
+WILS is intended primarily as a research tool, giving scientists a non-invasive way to track and identify whale populations over time and to build long-term datasets on distribution and movement. It also supports conservation: knowing where whales are in near real time could help ships avoid them and reduce the strikes that threaten species like the right whale. The prototype currently has several limitations. Amplitude-based ranging depends on assumptions about a whale's source level and on how sound attenuates in water, and individual identification is a stretch goal rather than a guaranteed capability. Future work will address both.
 
 ## 1. Introduction
 
