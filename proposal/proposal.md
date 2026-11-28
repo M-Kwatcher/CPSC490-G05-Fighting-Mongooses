@@ -71,20 +71,9 @@ Date: 〈YYYY-MM-DD〉
 
 ## 0. Abstract
 
-> The primary purpose of abstract is to help the reader understand the main
-> message of current document (proposal in this case) without reading the
-> entire document. Therefore an abstract should include at least one or two
-> paragraph of background (or motivation) information for the project, a
-> brief description of the problem you are trying to solve in this proposal,
-> a proposed ideas or solutions, the significance of your proposed idea
-> elaborating why the proposed idea is non-trivial, significant, or
-> beneficial in one or two paragraphs, the project goals and outcomes in one
-> paragraph, and a brief description of what you will discuss in this
-> proposal, giving a brief outline of this document in 1-2 sentences in one
-> paragraph. Abstract should not exceed one page. Any abstract exceeded
-> one-page limit must be shortened.
+Studying whales in the wild is difficult because the methods used to observe them often disturb them. Drones can disrupt whales with engine noise and shadows, which the Marine Mammal Protection Act restricts. Tagging is invasive and impractical at the scale of a whole population. Yet accurate data on where whales are and which species and individuals they are is essential for research and for protecting threatened populations, such as the North Atlantic right whale, which numbers only about 382 and is still threatened by ship strikes.
 
-〈Your abstract. Write it last.〉
+We present WILS(Whale Identification/Location System), a passive system that locates and identifies whales from their calls without disturbing them. An array of hydrophones records whale vocalizations. The system estimates the direction of a call from the angular difference between the hydrophones that detected it, then estimates range with a linear regression on the call's amplitude relative to its expected amplitude at close range. A trained deep learning model classifies the call by species and, where possible, by individual whale. By providing non-invasive, continuous tracking and identification, WILS supports population research and can also give ships advance warning of nearby whales.
 
 ## 1. Introduction
 
